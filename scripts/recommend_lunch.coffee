@@ -9,7 +9,7 @@ module.exports = (robot) ->
           token_secret: process.env.YELP_TOKEN_SECRET
         })
 
-        yelp.search({ term: 'food', location: '港区南青山6-10-12', radius_filter: 2000, cc: 'JP', lang: 'ja' })
+        yelp.search({ term: 'food', location: '港区, 南青山, 6-10-12', radius_filter: 1000, cc: 'JP', lang: 'ja' })
         .then (data) ->
             total = data.businesses.length
             console.log total
