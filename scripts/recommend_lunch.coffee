@@ -16,9 +16,11 @@ module.exports = (robot) ->
             random = Math.floor(Math.random() * total)
             console.log random
 
-            answer = "こんな所はどうでしょう？¥n¥n"
-            answer += data.businesses[random].name + "¥n"
-            answer += data.businesses[random].url
+            answer = "こんな所はどうでしょう？\n\n"
+            answer += data.businesses[random].name + "\n"
+            answer += data.businesses[random].url + "\n"
+            answer += data.businesses[random].location.display_address + "\n"
+            answer += data.businesses[random].image_url + "\n"
 
             msg.send answer
         .catch (err) ->
